@@ -1,0 +1,46 @@
+* ob-haskell-ng
+
+[[http://melpa.org/#/ob-typescript][http://melpa.org/packages/ob-typescript-badge.svg]]
+
+This org-mode babel support for execution of Haskell code blocks using https://gitlab.com/magus/haskell-ng-mode.
+
+** Install
+
+*** Requirement
+
+You need to have ghc installed to use this extension.
+
+*** ToDo MELPA
+With setting up [[http://melpa.org][MELPA]], use =M-x package-install ob-haskell-ng.
+
+*** Manually
+Add ob-typescript.el to your =load-path= and require.
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path "/path/to/ob-haskell-ng.el")
+(require 'ob-haskell-ng)
+#+END_SRC
+
+** Configure
+
+#+BEGIN_SRC emacs-lisp
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((haskell-ng . t)
+   ))
+#+END_SRC
+
+The default command used to run ghci is defined in [[help:org-babel-command:haskell-ng][org-babel-command:haskell-ng]].
+
+#+begin_src emacs-lisp
+  (setq org-babel-command:haskell-ng "cabal repl")
+#+end_src
+
+** Examples
+
+#+BEGIN_SRC haskell-ng :results output
+putStrLn "Hello World!"
+#+end_src
+
+#+RESULTS:
+: Hello, World!
