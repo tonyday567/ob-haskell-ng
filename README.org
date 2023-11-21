@@ -1,8 +1,8 @@
 * ob-haskell-ng
 
-[[http://melpa.org/#/ob-typescript][http://melpa.org/packages/ob-typescript-badge.svg]]
+[[http://melpa.org/#/ob-typescript][http://melpa.org/packages/ob-haskell-ng-badge.svg]]
 
-This org-mode babel support for execution of Haskell code blocks using https://gitlab.com/magus/haskell-ng-mode.
+This org-mode babel support for execution of Haskell code blocks using [[https://gitlab.com/magus/haskell-ng-mode][haskell-ng-mode]].
 
 ** Install
 
@@ -14,7 +14,6 @@ You need to have ghc installed to use this extension.
 With setting up [[http://melpa.org][MELPA]], use =M-x package-install ob-haskell-ng.
 
 *** Manually
-Add ob-typescript.el to your =load-path= and require.
 
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "/path/to/ob-haskell-ng.el")
@@ -23,19 +22,6 @@ Add ob-typescript.el to your =load-path= and require.
 
 ** Configure
 
-#+BEGIN_SRC emacs-lisp
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((haskell-ng . t)
-   ))
-#+END_SRC
-
-The default command used to run ghci is defined in [[help:org-babel-command:haskell-ng][org-babel-command:haskell-ng]].
-
-#+begin_src emacs-lisp
-  (setq org-babel-command:haskell-ng "cabal repl")
-#+end_src
-
 ** Examples
 
 #+BEGIN_SRC haskell-ng :results output
@@ -43,4 +29,12 @@ putStrLn "Hello World!"
 #+end_src
 
 #+RESULTS:
-: Hello, World!
+: Resolving dependencies...
+: Build profile: -w ghc-9.4.7 -O1
+: In order, the following will be built (use -v for more details):
+:  - fake-package-0 (lib) (first run)
+: Configuring library for fake-package-0..
+: Warning: No exposed modules
+: GHCi, version 9.4.7: https://www.haskell.org/ghc/  :? for help
+: Loaded GHCi configuration from /var/folders/h1/yhtz6g614_g999nh_tb4gj600000gn/T/cabal-repl.-29554/setcwd.ghci
+: Hello World!
