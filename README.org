@@ -2,16 +2,13 @@
 
 [[http://melpa.org/#/ob-typescript][http://melpa.org/packages/ob-haskell-ng-badge.svg]]
 
-This org-mode babel support for execution of Haskell code blocks using [[https://gitlab.com/magus/haskell-ng-mode][haskell-ng-mode]].
+This library provides org-mode babel support for execution of Haskell code blocks using [[https://gitlab.com/magus/haskell-ng-mode][haskell-ng-mode]].
 
 ** Install
 
 *** Requirement
 
 You need to have ghc installed to use this extension.
-
-*** ToDo MELPA
-With setting up [[http://melpa.org][MELPA]], use =M-x package-install ob-haskell-ng.
 
 *** Manually
 
@@ -20,11 +17,9 @@ With setting up [[http://melpa.org][MELPA]], use =M-x package-install ob-haskell
 (require 'ob-haskell-ng)
 #+END_SRC
 
-** Configure
-
 ** Examples
 
-#+BEGIN_SRC haskell-ng :results output
+#+BEGIN_SRC haskell-ng :results output :exports both
 putStrLn "Hello World!"
 #+end_src
 
