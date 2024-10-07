@@ -4,7 +4,7 @@
 ;; Keywords: languages
 ;; Homepage: https://github.com/tonyday567/ob-haskell-ng
 ;; Version: 0.0.1
-;; Package-Requires: ((emacs "29.1") (haskell-ng "0.0.1"))
+;; Package-Requires: ((emacs "29.1") (haskell-ng-mode "0.0.1"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the ed warranty of
